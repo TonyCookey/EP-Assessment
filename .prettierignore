@@ -3,5 +3,3 @@ dist
 coverage
 data
 package-lock.json
-# Preserve conversation exports verbatim.
-docs/ai-transcripts/sessions/
