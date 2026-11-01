@@ -85,6 +85,7 @@ export const openapi = {
             name: 'Idempotency-Key',
             in: 'header',
             required: false,
+            example: 'order-1-attempt-1',
             schema: {
               type: 'string',
               minLength: 1,
@@ -92,7 +93,7 @@ export const openapi = {
               pattern: '^[!-~]+$',
             },
             description:
-              'Case-sensitive visible ASCII; exactly one header value.',
+              'Optional key for safely retrying payment creation. Reuse the same key and equivalent request body to receive the existing payment with HTTP 200. Different input with the same key returns HTTP 409. Keys persist across restarts and do not expire. Use 1–128 case-sensitive visible ASCII characters without spaces and exactly one header value.',
           },
         ],
         requestBody: {
